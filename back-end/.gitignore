@@ -1,0 +1,5 @@
+# ignores the .env file
+.env
+
+# ignores the build directory
+node_modules/
