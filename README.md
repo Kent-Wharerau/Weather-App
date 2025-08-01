@@ -1,0 +1,230 @@
+# 🌤️ Full-Stack Weather App
+
+A responsive weather application built with **React** (frontend) and **Express.js** (backend) that provides real-time weather information for any city worldwide.
+
+---
+
+## 🌟 Features
+
+- **Real-time Weather Data**: Get current weather conditions for any city
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Search Functionality**: Search by city name with Enter key or button click
+- **Error Handling**: User-friendly error messages and loading states
+- **Secure API**: Backend handles API keys securely
+- **Auto-clear Input**: Input field clears after successful searches
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **React** – User interface library  
+- **Vite** – Build tool and development server  
+- **CSS3** – Styling and responsive design  
+
+### Backend
+- **Node.js** – JavaScript runtime  
+- **Express.js** – Web framework  
+- **Axios** – HTTP client for API requests  
+- **CORS** – Cross-origin resource sharing  
+- **dotenv** – Environment variable management  
+
+### API
+- **WeatherAPI** – Real-time weather data provider
+
+---
+
+## 📋 Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or higher)  
+- npm or yarn package manager  
+- WeatherAPI key (get one free from [weatherapi.com](https://www.weatherapi.com/))
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/full-stack-weather-app.git
+cd full-stack-weather-app
+```
+
+### 2. Backend Setup
+```bash
+# Navigate to backend directory
+cd backend
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+
+# Add your API key to the .env file
+WEATHER_API_KEY=your_weather_api_key_here
+PORT=3001
+```
+
+### 3. Frontend Setup
+```bash
+# Navigate to frontend directory
+cd ../frontend
+
+# Install dependencies
+npm install
+```
+
+### 4. Running the Application
+
+#### Start Backend Server
+```bash
+# In the backend directory
+npm run dev
+```
+> The backend server will run on: [http://localhost:3001](http://localhost:3001)
+
+#### Start Frontend Development Server
+```bash
+# In the frontend directory (new terminal)
+npm run dev
+```
+> The frontend will run on: [http://localhost:5174](http://localhost:5174) *(or another available port)*
+
+---
+
+## 📁 Project Structure
+
+```
+full-stack-weather-app/
+├── backend/
+│   ├── server.js              # Express server configuration
+│   ├── package.json           # Backend dependencies
+│   ├── .env                   # Environment variables (not committed)
+│   └── .env.example           # Environment template
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx            # Main React component
+│   │   ├── App.css            # Application styles
+│   │   └── main.jsx           # React entry point
+│   ├── package.json           # Frontend dependencies
+│   └── index.html             # HTML template
+└── README.md                  # Project documentation
+```
+
+---
+
+## 🔧 API Endpoints
+
+### **Weather Data**
+```
+GET /api/weather/:city
+```
+Returns current weather data for the specified city.
+
+**Example Response:**
+```json
+{
+  "location": {
+    "name": "Auckland",
+    "country": "New Zealand"
+  },
+  "current": {
+    "temp_c": 18.0,
+    "condition": {
+      "text": "Partly cloudy",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png"
+    }
+  }
+}
+```
+
+### **Health Check**
+```
+GET /api/health
+```
+Returns server status information.
+
+---
+
+## 🎯 Usage
+
+1. Start both the backend and frontend servers  
+2. Open your browser to the frontend URL  
+3. Enter a city name in the search input  
+4. Press **Enter** or click **Search**  
+5. View the temperature, conditions, and weather icon  
+
+---
+
+## 🔒 Security Features
+
+- API keys stored securely in environment variables  
+- Input validation and sanitization  
+- Proper error handling for invalid requests  
+- CORS configuration for secure cross-origin requests  
+
+---
+
+## 🌐 Deployment
+
+### Backend Deployment (Heroku Example)
+```bash
+# Add Heroku remote
+heroku create your-weather-app-backend
+
+# Set environment variables
+heroku config:set WEATHER_API_KEY=your_api_key_here
+
+# Deploy to Heroku
+git push heroku main
+```
+
+### Frontend Deployment (Vercel Example)
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy to Vercel
+vercel
+```
+> **Note**: Update `API_BASE_URL` in `App.jsx` to point to your deployed backend URL.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository  
+2. Create a feature branch:  
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. Commit your changes:  
+   ```bash
+   git commit -m "Add some amazing feature"
+   ```
+4. Push to the branch:  
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- [WeatherAPI](https://www.weatherapi.com/) – for providing the weather data  
+- [React](https://react.dev/) – frontend framework  
+- [Express.js](https://expressjs.com/) – backend framework  
+
+---
+
+> ⭐ *If you found this project helpful, please give it a star!*
